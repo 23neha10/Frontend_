@@ -1,0 +1,64 @@
+﻿@using UserAuthenication.Models
+
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<body>
+
+    <h2 style="color:green;margin-top:60px;text-align:center"> Welcome in User Login page</h2>
+
+    <div class="row">
+        <div class="col-lg-4">
+
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+        <div class="col-lg-4" style="background-color:brown;border:5px;">
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+            <table>
+
+                <tr>
+                    <td class="form-contro-label" style="text-align:right;font-size:large;">
+                        @Html.LabelFor(model=>model.UserEmail)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model =>model.UserEmail, new { @class="form-control"})
+                    </td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        @Html.ValidationMessageFor(model=>model.UserEmail)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-contro-label" style="text-align:right;font-size:large;">
+                        @Html.LabelFor(model=>model.UserPassword)
+
+                    </td>
+                    <td>
+                        @Html.PasswordFor(model => model.UserPassword, new {@class="form-control"})
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <input type="submit" class="btn btn-success" name="button" value="Login" id="Submit" />
+                    </td>
+                </tr>
+            </table>
+
+            }
+        </div>
+        
+    </div>
+</body>
